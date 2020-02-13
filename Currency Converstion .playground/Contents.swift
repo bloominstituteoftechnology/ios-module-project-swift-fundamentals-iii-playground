@@ -23,22 +23,22 @@ let currency: Currency = .mxn
 
 
 func convert(_ dollars: Double) -> Double {
-
+    
     if currency == .cad {
         
         print("This is the conversion for USD to CAD: \(usToCad)")
-            return dollars * usToCad
+        return dollars * usToCad
         
     } else if currency == .mxn {
         
         print("This is the conversion for USD to MXN: \(usToMxn)")
-            return dollars * usToMxn
-     
+        return dollars * usToMxn
+        
     }
     return 0
 }
 
-print(convert(25))
+print(convert(20))
 
 
 //create a constant called amount. Its value should be the amountString that is initialized into a Double
@@ -50,11 +50,11 @@ func convert(amountString: String) -> String? {
     // printing out in string form ...
     
     guard let amount = Double(amountString) else {
-            return nil
+        return nil
         
     }
-        let convertedCurrency = convert(amount)
-        return String(convertedCurrency)
+    let convertedCurrency = convert(amount)
+    return String(convertedCurrency)
 }
 
 convert(amountString: "30")

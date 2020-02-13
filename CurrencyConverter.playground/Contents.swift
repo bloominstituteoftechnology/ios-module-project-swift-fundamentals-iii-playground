@@ -67,6 +67,21 @@ func convert(_ dollars: Double) -> Double {
 //:    * create a constant called `amount`. Its value should be the `amountString` that is initialized into a `Double`
 //:    * use a `guard let` to unwrap the new `amount` constant.
 //:    * convert the dollar amount to the expected currency (hint, you'll want to call the `convert` method you created in step 4
+
+func convert(amountString: String) -> String? {
+    var result: String?
+    
+    guard let amount = Double(amountString) else {
+        return result
+    }
+    
+    let answer = convert(amount)
+    
+    result = "\(answer)"
+    
+    return result
+}
+
 //:7. Test your code by calling `convert(amountString` with some values. Change your `currency` to both `.cad` and `.mxn` (by manually changing the value of your `currency` variable above) to make sure the conversion works for both currencies.
 //:
 //:

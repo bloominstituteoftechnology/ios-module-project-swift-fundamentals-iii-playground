@@ -131,4 +131,6 @@ assert(convertWithFormat(amountString: "100") == "$1,859.00")
 
 //:2. Use the `string(from:)` method to convert from a number to a String for display
 
-
+currency = .cad
+let a1 = convert(100)
+String(a1)

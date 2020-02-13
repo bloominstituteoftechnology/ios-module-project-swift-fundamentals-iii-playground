@@ -23,6 +23,7 @@
 //:        case mxn
 //:    }
 //:    ```
+import Foundation
 
 enum Currency {
     case cad
@@ -105,7 +106,28 @@ assert(convert(amountString: "-100") == "-1859.0")
 //:    ```
 //:
 
+var currencyFormatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    return formatter
+}()
 
+func convertWithFormat(amountString: String) -> String? {
+    var result: String?
+    
+    guard let amount = Double(amountString) else {
+        return result
+    }
+    
+    let answer = convert(amount)
+    
+    result = currencyFormatter.string(from: answer as NSNumber)
+    
+    return result
+}
+
+currency = .mxn
+assert(convertWithFormat(amountString: "100") == "$1,859.00")
 
 //:2. Use the `string(from:)` method to convert from a number to a String for display
 

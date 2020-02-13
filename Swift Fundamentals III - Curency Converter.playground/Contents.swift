@@ -10,31 +10,31 @@ let usToCad = 1.33
 let usToMxn = 18.60
 
 var currency: Currency = .cad
- 
-
 
 func convert(_ dollars: Double) -> Double {
     
     if usToCad > usToMxn {
-        print("The Canadian dollar is stronger than the Mexican Peso.")
+        return usToCad * dollars
     } else {
-        print("The Mexican Peso is strong that the Canadian dollar.")
+        return usToMxn * dollars
     }
-    
-    let convertedDollars = dollars * usToCad
-    return convertedDollars
-    
 }
 
-convert(10.0)
+let convertedDollars = convert(100.0)
+print(convertedDollars)
+
 
 func convert(amountString: String) -> Sting? {
     
     let amount = Double(amountString)
     
     guard let newAmount = amount else {
-      amount Currency.cad
-        
+        return nil
     }
+    
+    let convertedAmount = convert(newAmount)
+    return String(convertedAmount)
    
 }
+
+convert(10.0)

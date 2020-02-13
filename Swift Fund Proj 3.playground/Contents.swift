@@ -43,3 +43,14 @@ currency = .cad
 convert(amountString: "This will return nil because it's not a number")
 
 
+
+// Stretch goals
+
+let currencyFormatter = NumberFormatter()
+currencyFormatter.usesGroupingSeparator = true
+currencyFormatter.numberStyle = .currency
+// localize to your grouping and decimal separator
+
+let amount = currencyFormatter.string(for: convert(amountString: "200"))
+
+currencyFormatter.string(from: 20)

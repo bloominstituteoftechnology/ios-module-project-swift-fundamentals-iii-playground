@@ -9,22 +9,21 @@ enum Currency {
 let usToCad = 1.33
 let usToMxn = 18.60
 
-var currency: Currency = .cad
+var currency: Currency = .mxn
 
-func convert(_ dollars: Double) -> Double {
+func convert(_dollars: Double) -> Double {
     
     if usToCad > usToMxn {
-        return usToCad * dollars
+        return usToCad * _dollars
     } else {
-        return usToMxn * dollars
+        return usToMxn * _dollars
     }
 }
 
-let convertedDollars = convert(100.0)
+let convertedDollars = convert(_dollars: 100.0)
 print(convertedDollars)
 
-
-func convert(amountString: String) -> Sting? {
+func convert(amountString: String) -> String? {
     
     let amount = Double(amountString)
     
@@ -32,9 +31,10 @@ func convert(amountString: String) -> Sting? {
         return nil
     }
     
-    let convertedAmount = convert(newAmount)
+    let convertedAmount = convert(_dollars: newAmount)
     return String(convertedAmount)
    
 }
 
-convert(10.0)
+convert(amountString: "100.0")
+

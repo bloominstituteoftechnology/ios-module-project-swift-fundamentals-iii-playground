@@ -83,8 +83,15 @@ func convert(amountString: String) -> String? {
 }
 
 //:7. Test your code by calling `convert(amountString` with some values. Change your `currency` to both `.cad` and `.mxn` (by manually changing the value of your `currency` variable above) to make sure the conversion works for both currencies.
-//:
-//:
+currency = .cad
+assert(convert(amountString: "cad") == nil)
+assert(convert(amountString: "100") == "133.0")
+
+currency = .mxn
+assert(convert(amountString: "mxn") == nil)
+assert(convert(amountString: "100") == "1859.0")
+assert(convert(amountString: "-100") == "-1859.0")
+
 //:## Go Further (Optional)
 //:
 //:1. Customize the output using a `NumberFormatter`
@@ -97,4 +104,9 @@ func convert(amountString: String) -> String? {
 //:    }()
 //:    ```
 //:
+
+
+
 //:2. Use the `string(from:)` method to convert from a number to a String for display
+
+

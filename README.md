@@ -18,6 +18,7 @@ Create a new playground in this repository called "CurrencyConverter"
 1. Create a currency type enum below the `import` statements.
 
 	```swift
+    
 	enum Currency {
 	    case cad
 	    case mxn

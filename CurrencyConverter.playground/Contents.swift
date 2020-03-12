@@ -41,9 +41,33 @@ func convert(amountString: String) -> String? {
     // Converting the amount which is a double.
     let numberToString = convert(amount)
     
+    
+    let currencyFormatter: NumberFormatter = {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            return formatter
+       }()
+       
+    let priceString = currencyFormatter.string(from: 999.99)!
+        print(priceString)
+    
     // By returning numberToString in a String data type. We are saying, put this value into a string.
     return String(numberToString)
+    
+    
+   
 }
 
 
 convert(amountString: "12")
+
+
+// Stretch
+
+
+
+
+    
+    
+
+

@@ -4,12 +4,13 @@ import UIKit
 // 1 USD -> 1.33 CAD
 // 1 USD -> 18.60 MXN
 
-// optional 1.
-var currencyFormatter: NumberFormatter = {
-    let formatter = NumberFormatter()
-    formatter.numberStyle = .currency
-    return formatter
-}()
+// optional 1-2
+let formatter1 = NumberFormatter()
+formatter1.numberStyle = .currency
+
+func formatNumber(_ amount: Double) -> String {
+    formatter1.string(for: amount) ?? "Error"
+}
 
 // 1.
 enum Currency {
@@ -38,16 +39,15 @@ func convert(_ dollars: Double) -> Double {
 func convert(amountString: String) -> String? {
     let amount = Double(amountString)
     guard let amountUnwrap = amount else { return "Invalid Entry" }
-    return "\(convert(amountUnwrap))"
+    return formatNumber(convert(amountUnwrap))
 }
 
 // 7.
-convert(amountString: "Snail")
-convert(amountString: "50.00")
-convert(amountString: "23.19")
-convert(amountString: "0.00")
+let result1 = convert(amountString: "Snail")
+let result2 = convert(amountString: "50.00")
+let result3 = convert(amountString: "23.19")
+let result4 = convert(amountString: "0.00")
 
-// optional 2.
 
 
 

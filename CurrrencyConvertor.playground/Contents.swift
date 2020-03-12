@@ -33,10 +33,23 @@ func convert2(amountString: String) -> String? {
     guard let amount = Double(amountString) else {
         return nil
     }
-        let convertedAmount = convert(dollars: amount, targetCurrency: .cad)
-        return String(convertedAmount)
-    }
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    
+    let convertedAmount = convert(dollars: amount, targetCurrency: .cad)
+    
+    let currencyConverter = formatter.string(for: convertedAmount)!
+    
+    print(currencyConverter)
+    
+    return currencyConverter
+}
 
 convert2(amountString: "12")
+convert2(amountString: "6")
     
 //7. Test your code by calling `convert(amountString` with some values. Change your `currency` to both `.cad` and `.mxn` (by manually changing the value of your `currency` variable above) to make sure the conversion works for both currencies.
+
+
+    
+

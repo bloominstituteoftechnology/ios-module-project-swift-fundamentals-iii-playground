@@ -52,7 +52,7 @@ func convert_2(amountString: String) -> String {
 
 print(convert_2(amountString: "2.00"))
 
-
+//Number Formatter
 let formatter = NumberFormatter()
 formatter.numberStyle = .currency
 formatter.locale = Locale(identifier: "fr_CA")

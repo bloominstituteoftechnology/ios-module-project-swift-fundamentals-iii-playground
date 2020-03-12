@@ -16,7 +16,7 @@ var currency: Currency = .cad
 func convert(_ dollars: Double) -> Double {
     
     // checking the value of currency
-     
+    
     switch currency {
     case .cad:
         return dollars * usToCad
@@ -25,16 +25,16 @@ func convert(_ dollars: Double) -> Double {
     default:
         return dollars
     }
-
+    
 }
 
 print(convert(20))
 
 
 let currencyFormatter: NumberFormatter = {
-     let formatter = NumberFormatter()
-     formatter.numberStyle = .currency
-     return formatter
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    return formatter
 }()
 
 
@@ -50,24 +50,16 @@ func convert(amountString: String) -> String? {
     let numberToString = convert(amount)
     
     
-    
-       
-   
-    
-    // By returning numberToString in a String data type. We are saying, put this value into a string.
     return currencyFormatter.string(from: NSNumber(value: numberToString))
     
     
-   
+    
 }
-
-
-
 
 convert(amountString: "12")
 print(convert(amountString: "12")!)
 
-// Stretch
+
 
 
 

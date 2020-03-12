@@ -30,6 +30,14 @@ func convert(_ dollars: Double) -> Double {
 
 print(convert(20))
 
+
+let currencyFormatter: NumberFormatter = {
+     let formatter = NumberFormatter()
+     formatter.numberStyle = .currency
+     return formatter
+}()
+
+
 func convert(amountString: String) -> String? {
     
     // unwrapping the amountString. By putting the double in front of amount string we are saying to take away the "".
@@ -42,25 +50,22 @@ func convert(amountString: String) -> String? {
     let numberToString = convert(amount)
     
     
-    let currencyFormatter: NumberFormatter = {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .currency
-            return formatter
-       }()
+    
        
-    let priceString = currencyFormatter.string(from: 999.99)!
-        print(priceString)
+   
     
     // By returning numberToString in a String data type. We are saying, put this value into a string.
-    return String(numberToString)
+    return currencyFormatter.string(from: NSNumber(value: numberToString))
     
     
    
 }
 
 
-convert(amountString: "12")
 
+
+convert(amountString: "12")
+print(convert(amountString: "12")!)
 
 // Stretch
 

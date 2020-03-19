@@ -26,7 +26,7 @@ class Converter {
     }
 }
 
-let newCurrency = Converter()
+let newCurrency = Converter(currency: .cad)
 
 //Converts USD to CAN/MXN and prints the result as a String in currency format
 func convert(amountString: String) -> String {
@@ -37,7 +37,9 @@ func convert(amountString: String) -> String {
         formatter.numberStyle = .currency
         return formatter
     }()
-    print(currencyFormatter.string(from: NSNumber(value: newCurrency.convert(amount)))!)
+    let originalCurrency = currencyFormatter.string(from: NSNumber(value: amount))!
+    let formattedCurrency = currencyFormatter.string(from: NSNumber(value: newCurrency.convert(amount)))!
+    print("Your \(originalCurrency) converted to \(newCurrency.currency) is: \(formattedCurrency)")
     newCurrency.convert(amount)
     return amountString
 }

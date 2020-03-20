@@ -8,25 +8,40 @@ enum Currency: String{
 let usToCad = 1.45
 let usToMxn = 24.48
 
-let currency: Currency = .cad
-
-func convertMoney(_ dollars: Double) -> Double{
+class Conversion {
+    var currency: Currency
     
-    print("You are converting \(currency.rawValue) currently.")
-    let convertedValue = usToCad * dollars
-    print("\nThe current exchange is \(convertedValue) \(currency.rawValue) per \(dollars) US Dollar.")
+    init(currency: Currency){
+        self.currency = currency
+    }
     
-    return convertedValue
+    func convertMoney(_ dollars: Double) -> Double{
+        switch currency {
+        case .cad:
+            print("You are converting \(currency.rawValue) currently.")
+            let newConversion = dollars * usToCad
+            print("\nThe current exchange is \(newConversion) \(currency.rawValue) per \(dollars) US Dollar(s).")
+            return newConversion
+        case .mnx:
+            print("You are converting \(currency.rawValue) currently.")
+            let newConversion = dollars * usToMxn
+            print("\nThe current exchange is \(newConversion) \(currency.rawValue) per \(dollars) US Dollar(s).")
+            return newConversion
+        }
+    }
+    
 }
+
+let conversionCurrency = Conversion(currency: .cad)
 
 func convert(amountString: String) -> String?{
     guard let amount = Double(amountString), amount > 0 else{
         print("Invalid Amount: \(amountString)")
         return amountString
     }
-    
-    convertMoney(amount)
+    conversionCurrency.convertMoney(amount)
     return amountString
 }
 
-convert(amountString: "50")
+let solutionConversion = convert(amountString: "50")
+

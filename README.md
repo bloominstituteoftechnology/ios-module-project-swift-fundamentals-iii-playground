@@ -6,10 +6,10 @@ The goal of today's module project is to create a Currency Conversion playground
 
 Get the currency conversion value from Google:
 
-On August 7th, 2019 they were:
 
-	$1 USD to $1.33 CAD
-	$1 USD to $19.70 MXN
+
+	$1 USD to $1.45  CAD
+	$1 USD to $23.98 MXN
 
 ## Add the Conversion Logic
 

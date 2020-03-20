@@ -11,17 +11,26 @@ enum Currency {
 var usToCad = 1.45
 var usToMex = 24.03
 
-var currency: Currency = .cad
+var currency: Currency = .mxn
 
-func converter(_ dollars: Double) -> Double {
+func convert(_ dollars: Double) -> Double {
+    let can = usToCad * dollars
+    let mex = usToMex * dollars
     switch currency {
     case .cad:
-        print("canadian currency")
+        print("canadian currency \(can)")
     case .mxn:
-        print("Mexican currency")
+        print("Mexican currency \(mex)")
     default:
         print("")
     }
-    return
+    return dollars
+}
+convert(20)
+
+func convert(amountString: String) -> String? {
+    guard let amount = Double(amountString) else {return}
+    
 }
 
+convert(amountString: "20")

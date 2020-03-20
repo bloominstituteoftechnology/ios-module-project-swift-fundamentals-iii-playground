@@ -57,3 +57,54 @@ Create a new playground in this repository called "CurrencyConverter"
 2. Use the `string(from:)` method to convert from a number to a String for display
 
 
+import UIKit
+
+enum Currency {
+    case cad
+    case mxn
+}
+
+let usToCad = 1.45   // rates per Google conversion rates at 3:40 PM EST, March 19, 2020
+let usToMxn =  23.95
+
+var currency: Currency = .mxn
+
+
+    
+
+func convert(_ dollars: Double) -> Double {
+    
+    switch currency {
+        
+    case .cad:
+        return dollars * usToCad
+    case .mxn:
+        return dollars * usToMxn
+    }
+}
+
+
+func convert2(amountString: String) -> String? {
+    
+    let amount = Double(amountString)
+    guard let unwrappedAmount = amount else {
+    return nil
+    }
+   
+    let money = convert(unwrappedAmount)
+    var currencyFormatter: NumberFormatter = {
+         let formatter = NumberFormatter()
+         formatter.numberStyle = .currency
+         formatter.locale = Locale(identifier: "es_MX")
+         return formatter
+    }()
+    return currencyFormatter.string(from: NSNumber(value: money))
+}
+
+
+var money = convert2(amountString: "4000")
+if let unwrappedMoney = money {
+    print(unwrappedMoney)
+}
+
+// Ian French March 19

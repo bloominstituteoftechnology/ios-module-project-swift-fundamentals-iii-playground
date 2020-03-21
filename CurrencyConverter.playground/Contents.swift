@@ -18,9 +18,9 @@ func convert(_ dollars: Double) -> Double {
     let mex = usToMex * dollars
     switch currency {
     case .cad:
-        print("Canadian currency \(can)")
+        print("Canadian Dollar \(can)")
     case .mxn:
-        print("Mexican currency \(mex)")
+        print("Mexican Peso \(mex)")
     default:
         print("")
     }
@@ -28,4 +28,15 @@ func convert(_ dollars: Double) -> Double {
 }
 //convert(20)
 
+func convert(amountString: String) -> String? {
+    guard let amount = Double(amountString) else {
+        print("Not valid")
+        return amountString
+    }
+    let convertToAmount = convert(amount)
+    let converToString = String(convertToAmount)
+    return converToString
+    
+}
 
+convert(amountString: "20")

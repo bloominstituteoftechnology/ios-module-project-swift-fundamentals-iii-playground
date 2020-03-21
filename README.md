@@ -57,3 +57,43 @@ Create a new playground in this repository called "CurrencyConverter"
 2. Use the `string(from:)` method to convert from a number to a String for display
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+func convert(amountString: String) -> String? {
+    guard let amount = Double(amountString) else {
+       print("No value")
+        return amountString
+    }
+    
+    let convertedAmount = convert(amount)
+    let convertToString = String(convertedAmount)
+    return convertToString
+}
+
+convert(amountString: "14")

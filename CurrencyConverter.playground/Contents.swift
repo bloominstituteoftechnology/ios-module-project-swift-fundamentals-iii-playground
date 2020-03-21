@@ -39,4 +39,4 @@ func convert(amountString: String) -> String? {
     
 }
 
-convert(amountString: "20")
+convert(amountString: "30")

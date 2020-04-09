@@ -22,6 +22,15 @@ func convert(_ dollars: Double) -> Double {
         print("Uh-oh. This is not where you want to be!")
     }
 }
-func convert(amountString: String) -> String? {
-    let amount = amountString
+ func convert(amountString: String) -> String? {
+    guard let amount = Double(amountString) else {
+        print("I do not know what you are trying give me, but it's not US Dollars. Love, your developer.")
+        return nil
+    }
+    return String(convert(amount))
 }
+convert(12.50)
+convert(1.00)
+currency = .mxn
+convert(1.00)
+convert(13.00)

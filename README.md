@@ -42,6 +42,26 @@ Create a new playground in this repository called "CurrencyConverter"
 7. Test your code by calling `convert(amountString` with some values. Change your `currency` to both `.cad` and `.mxn` (by manually changing the value of your `currency` variable above) to make sure the conversion works for both currencies.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Go Further (Optional)
 
 1. Customize the output using a `NumberFormatter`

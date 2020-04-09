@@ -17,8 +17,11 @@ func convert(_ dollars: Double) -> Double {
     case .mxn:
     let mexicanPesos = dollars * usdToMxn
         return mexicanPesos
-    //i know i don't need this but i think this is my signature
+    //i know i know
     default:
         print("Uh-oh. This is not where you want to be!")
     }
+}
+func convert(amountString: String) -> String? {
+    let amount = amountString
 }

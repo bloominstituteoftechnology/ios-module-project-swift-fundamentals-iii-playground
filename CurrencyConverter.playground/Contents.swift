@@ -9,6 +9,12 @@ let usToCad = 1.40
 let usToMxn = 23.67
 let currency: Currency = .cad
 
+var currencyFormatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    return formatter
+}()
+
 func convert(dollars: Double) -> Double {
     
     if currency == .cad {
@@ -22,12 +28,16 @@ func convert(dollars: Double) -> Double {
 }
 
 func convert(amountString: String) -> String? {
-    let amount = Double(amountString)
-    guard let amountString = amount else {
-        return "Not a valid value"
-    }
-convert(dollars: amountString)
-    return String(convert(dollars: amountString))
+    guard let amount = Double(amountString) else { return nil }
+    
+   let dollars = convert(dollars: amount)
+     
+    return String(dollars)
 }
 
 convert(amountString: "54")
+
+
+
+
+

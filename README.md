@@ -30,6 +30,7 @@ Create a new playground in this repository called "CurrencyConverter"
 	func convert(_ dollars: Double) -> Double {
 	
 	}
+    
 	```
 5. In the above method:
     * Check the value of `currency` to see whether you should convert to CAD or MXN

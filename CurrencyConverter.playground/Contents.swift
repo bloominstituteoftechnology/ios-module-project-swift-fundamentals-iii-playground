@@ -14,7 +14,7 @@ enum Currency {
 let usToCad = 1.38
 let usToMxn = 21.58
 
-// Create a property named currency of type Currency. This will store the current currency type we'll be converting to. Set an initial value of .cad
+// Create a property named currency of type Currency. This will store the current currency type we'll be converting to. Set an initial value of Currency.cad
 
 var currency = Currency.cad
 

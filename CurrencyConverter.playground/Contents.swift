@@ -20,3 +20,14 @@ func convert(dollars: Double) -> Double {
         }
     return dollars
 }
+
+func convert(amountString: String) -> String? {
+    let amount = Double(amountString)
+    guard let amountString = amount else {
+        return "Not a valid value"
+    }
+convert(dollars: amountString)
+    return String(convert(dollars: amountString))
+}
+
+convert(amountString: "54")

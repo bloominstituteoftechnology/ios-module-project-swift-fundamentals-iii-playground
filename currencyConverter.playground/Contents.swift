@@ -8,7 +8,7 @@ enum Currency {
 let usToCad = 1.38
 let usToMxn = 21.61
 
-var currency: Currency = .cad
+var currency: Currency = .mxn
 
 func convert(_ dollars: Double) -> Double {
     var converted: Double = 1.0
@@ -30,3 +30,4 @@ func convert(amountString: String) -> String? {
         return String(usd)
 }
 convert(amountString: "38")
+convert(amountString: "44")

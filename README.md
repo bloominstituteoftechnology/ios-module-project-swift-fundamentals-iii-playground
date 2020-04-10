@@ -1,3 +1,4 @@
+/*
 # Swift Fundamentals III Module Project
 
 #### **Please fork and clone this repository**
@@ -55,5 +56,51 @@ Create a new playground in this repository called "CurrencyConverter"
 	```
 
 2. Use the `string(from:)` method to convert from a number to a String for display
+*/
+
+
+
+enum CurrencyType: String {
+  case dollars = "American dollars"
+  case cadDollar = "Canadian dollar" 
+  case pesos = "Mexican pesos"
+  case pounds = "British pounds"
+  case yen = "Japanese yen"
+}
+
+
+
+
+let defaultValueUS: Double = 1.00 
+
+let usToCad: Double = defaultValueUS + 0.40
+
+func currencyConverterToCanadian( _ dollarToCanadian: Double) {
+  let dollarToCanadian: Double = defaultValueUS + 0.40
+  print("The conversion rate from dollar $\(defaultValueUS) to Canadian is \(dollarToCanadian)")
+}
+currencyConverterToCanadian(1.00)
+
+
+
+
+let usToMxn: Double = defaultValueUS + 22.72
+
+func currencyConverterToMexican( _ dollarToPeso: Double) {
+  let dollarToPeso: Double = defaultValueUS + 22.72
+  print("The conversion rate from dollar $\(defaultValueUS) to Peso is \(dollarToPeso)")
+}
+currencyConverterToMexican(1.00)
+
+
+
+
+let usToPounds: Double = defaultValueUS - 0.20
+
+print(usToPounds)
+
+let usToYen: Double = defaultValueUS +  107.48
+
+print(usToYen)
 
 

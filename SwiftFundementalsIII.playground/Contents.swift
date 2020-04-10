@@ -23,11 +23,11 @@ func convert(dollars: Double) -> Double {
 }
 //6.
 func convertTwo(amountString: String) -> String? {
-  guard let amount = Double(amountString) else { return
-  }
-    return ""
+  guard let amount = Double(amountString) else { return nil }
+    
+    let dollars = convert(dollars: amount)
+    return nil
 }
-    //convert(dollars: amountString)
 
 //7.
-//convert(amountString: "18.56)
+convertTwo(amountString: "18.56")

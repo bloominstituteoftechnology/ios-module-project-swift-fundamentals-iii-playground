@@ -108,6 +108,10 @@ currencyConverterToPounds(1.00)
 
 let usToYen: Double = defaultValueUS +  107.48
 
-print(usToYen)
+func currencyConverterToYen( _ dollarToYen: Double) {
+  let dollarToYen: Double = defaultValueUS + 107.48
+  print("The conversion rate from dollar $\(defaultValueUS) to Yen is \(dollarToYen)")
+}
+currencyConverterToYen(1.00)
 
 

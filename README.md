@@ -97,7 +97,14 @@ currencyConverterToMexican(1.00)
 
 let usToPounds: Double = defaultValueUS - 0.20
 
-print(usToPounds)
+func currencyConverterToPounds( _ dollarToPounds: Double) {
+  let dollarToPounds: Double = defaultValueUS - 0.20
+  print("The conversion rate from dollar $\(defaultValueUS) to Peso is \(dollarToPounds)")
+}
+currencyConverterToPounds(1.00)
+
+
+
 
 let usToYen: Double = defaultValueUS +  107.48
 

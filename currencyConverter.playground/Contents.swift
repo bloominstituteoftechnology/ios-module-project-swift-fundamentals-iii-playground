@@ -24,7 +24,7 @@ checkValue(Currency.mxn)
 func convert(amountString: String?) -> String?{
     guard let amount = amountString else {
         
-        return ch
-        
+        return checkValue
+          
     }
 }

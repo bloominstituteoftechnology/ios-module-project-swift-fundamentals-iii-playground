@@ -1,6 +1,6 @@
 # Swift Fundamentals III Module Project
 
-#### **Please fork and clone this repository**
+####  **Please fork and clone this repository**
 
 The goal of today's module project is to create a Currency Conversion playground that can convert from US dollars (USD) to Canadian dollars (CAD) and Mexican Pesos (MXN).
 

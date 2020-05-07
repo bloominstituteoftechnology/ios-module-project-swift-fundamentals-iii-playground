@@ -1,49 +1,49 @@
 import UIKit
 
-enum Currency {
-    case cad
-    case mxn
-}
-
-
-
 var currencyFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
     formatter.numberStyle = .currency
     return formatter
 }()
 
+enum Currency {
+    
+    case cad
+    case mxn
+}
 
 let usToCad = 1.40
-let usToMxn = 23.63
+let usToMxn = 24.07
 
 
-var currency:Currency = .mxn
-
+var currency: Currency = .cad
 
 func convert(_ dollars: Double) -> Double {
     
-    if currency == .cad {
-        return usToCad * dollars
-    } else if  currency == .mxn {
-        return usToMxn * dollars
-    } else {
-         return dollars
+    switch currency {
+    case .cad:
+        print(dollars * usToCad)
+        return dollars * usToCad
+    case .mxn:
+        return dollars * usToMxn
     }
 }
 
-func convert(amountString: String) -> String? {
+func convert(amountString: String) -> String  {
     
-    
-    guard let amount = Double(amountString) else{return nil}
-    
+    guard let amount = Double(amountString) else { return " "}
     let convertedAmount = convert(amount)
     
-    return currencyFormatter.string(from: NSNumber(value: convertedAmount))
+    guard let currencyStyle = currencyFormatter.string(from: NSNumber(value: convertedAmount)) else { return " "}
+    switch currency {
+    case .cad:
+        return "\(currencyStyle) cad"
+    case .mxn:
+        return "\(currencyStyle) pesos"
+    }
+    
     
 }
 
-convert(amountString: "12")
-
-
+print(convert(amountString: "13"))
 

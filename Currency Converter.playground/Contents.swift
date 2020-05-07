@@ -19,4 +19,9 @@ let usToMxn = 24.06
 
 var currency: Currency = .cad
 
-
+func convert(dollars: Double) -> Double {
+    let canadaConvertedAmount = usToCad * dollars
+    print("equals \(canadaConvertedAmount)")
+    return canadaConvertedAmount
+}
+convert(dollars: 12)

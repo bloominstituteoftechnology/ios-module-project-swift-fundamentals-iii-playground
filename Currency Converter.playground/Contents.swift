@@ -11,17 +11,19 @@ var str = "Hello, playground"
 enum Currency {
     case cad
     case mxn
-
 }
 
 let usToCad = 1.40
 let usToMxn = 24.06
 
-var currency: Currency = .cad
+var currency: Currency? = .cad
 
-func convert(dollars: Double) -> Double {
-    let canadaConvertedAmount = usToCad * dollars
-    print("equals \(canadaConvertedAmount)")
+   func convert(dollars: Double) -> Double {
+       let canadaConvertedAmount = usToCad * dollars
+       print("equals \(canadaConvertedAmount)")
     return canadaConvertedAmount
 }
-convert(dollars: 12)
+
+    
+
+   convert(dollars: 12)

@@ -16,13 +16,19 @@ enum Currency {
 let usToCad = 1.40
 let usToMxn = 24.06
 
-var currency: Currency? = .cad
+var currency: Currency? = .mxn
 
    func convert(dollars: Double) -> Double {
-       let canadaConvertedAmount = usToCad * dollars
-       print("equals \(canadaConvertedAmount)")
-    return canadaConvertedAmount
+    if currency == .cad {
+       let newAmount = dollars * usToCad
+        print(newAmount)
+    } else if currency == .mxn  {
+        let otherAmount = dollars * usToMxn
+            print(otherAmount)
+        }
+    return dollars
 }
+
 
     
 

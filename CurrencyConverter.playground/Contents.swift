@@ -29,3 +29,25 @@ func convert(_ dollars: Double) -> Double {
     }
 }
 
+func convert(amountString: String) -> String? {
+    
+    
+    guard let amount = Double(amountString) else {
+        
+        print("Hi, I don't know what this is, but it's not USD. Please restart your app. Love, your Developer!")
+        return nil
+    }
+    
+    return String(convert(amount))
+    
+}
+
+convert(amountString: "12.50")
+convert(amountString: "35.75")
+convert(amountString: "75398433445434.23")
+
+currency = .mxn
+
+convert(amountString: "34.75")
+convert(amountString: "2156.23")
+convert(amountString: "8495743987515.45")

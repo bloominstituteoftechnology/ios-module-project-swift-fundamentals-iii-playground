@@ -22,7 +22,7 @@ func convert(dollars: Double) -> Double {
     }
 }
 
-func convert(amountString: String) -> String? {
+//func convert(amountString: String) -> String? {
 //    let amount: Double
 //    amount = amountString
 //
@@ -36,15 +36,21 @@ func convert(amountString: String) -> String? {
 //    formatter.numberStyle = .currency
 //    return formatter
 //} ()
+//}
 
 
-func multiply(firstNumber: Int, secondNumber: Int) -> Int {
-   let total = firstNumber * secondNumber
-    return total
-}
 
-let numberOne = 4
-let numberTwo = 5
 
-multiply(firstNumber: numberOne, secondNumber: numberTwo)
-}
+
+
+
+//func multiply(firstNumber: Int, secondNumber: Int) -> Int {
+//   let total = firstNumber * secondNumber
+//    return total
+//}
+//
+//let numberOne = 4
+//let numberTwo = 5
+//
+//multiply(firstNumber: numberOne, secondNumber: numberTwo)
+

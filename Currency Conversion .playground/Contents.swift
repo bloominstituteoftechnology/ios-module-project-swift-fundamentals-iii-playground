@@ -15,11 +15,18 @@ var currency: Currency = .cad
 
 func convert(_ dollars: Double) -> Double {
     if currency == .cad {
-        return dollars / 1.40
+        return dollars * usToCad
     } else {
-        return dollars / 24.07
+        return dollars * usToMxn
     }
 }
 
 convert(20)
 
+func convert2(amountString: String) -> String? {
+    let amount = Double(amountString)
+    guard let unwrappedAmount = amount else {
+        return
+    }
+    print("\(unwrappedAmount)")
+}

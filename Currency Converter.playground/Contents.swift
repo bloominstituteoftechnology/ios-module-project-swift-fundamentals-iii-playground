@@ -16,7 +16,7 @@ enum Currency {
 let usToCad = 1.40
 let usToMxn = 24.06
 
-var currency: Currency? = .mxn
+var currency: Currency? = .cad
 
    func convert(dollars: Double) -> Double {
     if currency == .cad {
@@ -32,4 +32,6 @@ var currency: Currency? = .mxn
 
     
 
-   convert(dollars: 12)
+convert(dollars: 12)
+convert(dollars: 309)
+convert(dollars: 6470)

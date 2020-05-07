@@ -11,7 +11,7 @@ enum Currency {
 let usToCad = 1 / 1.40
 let usToMxn = 1 / 24.07
 
-var currency: Currency = .cad
+var currency: Currency = .mxn
 
 func convert(_ dollars: Double) -> Double {
     if currency == .cad {
@@ -26,7 +26,11 @@ convert(20)
 func convert2(amountString: String) -> String? {
     let amount = Double(amountString)
     guard let unwrappedAmount = amount else {
-        return
+        return nil
     }
-    print("\(unwrappedAmount)")
+    // Return unwrappedAmount as a String?
+    let myString = String(convert(unwrappedAmount))
+    return myString
 }
+
+convert2(amountString: "20")

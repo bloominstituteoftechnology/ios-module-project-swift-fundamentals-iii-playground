@@ -15,4 +15,8 @@ enum Currency {
 }
 
 let usToCad = 1.40
-let 
+let usToMxn = 24.06
+
+var currency: Currency = .cad
+
+

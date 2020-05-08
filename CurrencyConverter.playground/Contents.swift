@@ -48,6 +48,7 @@ func convertDoubleToCurrency2(amount: Double) -> String {
 convert(dollars: 12)
 convert(dollars: 309)
 convert(dollars: 6470)
+convert(dollars: 60.33)
 
 func convert2(amountString: String) -> String? {
     let amount = Double(amountString)
@@ -60,3 +61,5 @@ func convert2(amountString: String) -> String? {
 
 convert2(amountString: "3")
 convert2(amountString: "16")
+convert2(amountString: "60")
+convert2(amountString: "714.33")

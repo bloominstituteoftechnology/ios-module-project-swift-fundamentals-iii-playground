@@ -24,7 +24,7 @@ var currency: Currency? = .mxn // change here and it still works
         print("\(convertDoubleToCurrency(amount: dollars)) American  = \(convertDoubleToCurrency2(amount: newAmount)) Canadian")
     } else if currency == .mxn  {
         let otherAmount = dollars * usToMxn
-            print("\(convertDoubleToCurrency(amount: dollars)) = \(convertDoubleToCurrency(amount: otherAmount)) Pesos")
+            print("\(convertDoubleToCurrency(amount: dollars)) USD = \(convertDoubleToCurrency(amount: otherAmount)) MXN")
         }
     return dollars
 }
@@ -63,3 +63,5 @@ convert2(amountString: "3")
 convert2(amountString: "16")
 convert2(amountString: "60")
 convert2(amountString: "714.33")
+
+

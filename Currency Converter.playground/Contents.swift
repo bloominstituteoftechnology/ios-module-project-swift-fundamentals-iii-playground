@@ -16,15 +16,15 @@ enum Currency {
 let usToCad = 1.40
 let usToMxn = 24.06
 
-var currency: Currency? = .cad
+var currency: Currency? = .mxn
 
    func convert(dollars: Double) -> Double {
     if currency == .cad {
        let newAmount = dollars * usToCad
-        print("\(convertDoubleToCurrency2(amount: newAmount))")
+        print("\(convertDoubleToCurrency2(amount: newAmount)) Canadian")
     } else if currency == .mxn  {
         let otherAmount = dollars * usToMxn
-            print("\(convertDoubleToCurrency(amount: otherAmount))")
+            print("\(convertDoubleToCurrency(amount: otherAmount)) Pesos")
         }
     return dollars
 }
@@ -32,7 +32,7 @@ var currency: Currency? = .cad
 func convertDoubleToCurrency(amount: Double) -> String {
       let numberFormatter = NumberFormatter()
       numberFormatter.numberStyle = .currency
-      numberFormatter.locale = Locale(identifier: "es_MX")
+      numberFormatter.locale = Locale(identifier: "es_MX") // Mexican currency
       
       return numberFormatter.string(from: NSNumber(value: amount))!
   }
@@ -40,7 +40,7 @@ func convertDoubleToCurrency(amount: Double) -> String {
 func convertDoubleToCurrency2(amount: Double) -> String {
     let numberFormatter = NumberFormatter()
     numberFormatter.numberStyle = .currency
-    numberFormatter.locale = Locale(identifier: "fr_CA")
+    numberFormatter.locale = Locale(identifier: "fr_CA") // French Canadian currency
     
     return numberFormatter.string(from: NSNumber(value: amount))!
 }
@@ -49,4 +49,14 @@ convert(dollars: 12)
 convert(dollars: 309)
 convert(dollars: 6470)
 
+func convert2(amountString: String) -> String? {
+    let amount = Double(amountString)
+    guard let unwrappedAmount = amount else {
+        return amountString
+    }
+    print(convert(dollars: unwrappedAmount))
+  return String(unwrappedAmount)
+}
+
+convert2(amountString: "12")
 

@@ -73,3 +73,13 @@ func fromUStoMexican(rate: Double) -> String {
 
 let newValue = fromUStoMexican(rate: 1)
 print(newValue)
+
+
+
+func fromUStoCanadian(rate: Double) -> String {
+    let canadianValue = (rate * usDollarValue) + (rate * 0.40)
+    return "For every American dollar ( $\(rate) ), I have $\(canadianValue) Canadian dollars"
+}
+
+let newValue2 = fromUStoCanadian(rate: 1)
+print(newValue2)

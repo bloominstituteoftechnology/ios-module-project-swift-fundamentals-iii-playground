@@ -63,3 +63,13 @@ let usDollarValue: Double = 1.00
 let usToMexican: Double = usDollarValue + 23.44
 
 let usToCanadian: Double = usDollarValue + 40
+
+
+
+func fromUStoMexican(rate: Double) -> String {
+    let pesoValue = (rate * usDollarValue) + (rate * 23.44)
+    return "For every American dollar ( $\(rate) ), I have $\(pesoValue) Pesos"
+}
+
+let newValue = fromUStoMexican(rate: 1)
+print(newValue)

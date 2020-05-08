@@ -16,7 +16,7 @@ enum Currency {
 let usToCad = 1.40
 let usToMxn = 24.06
 
-var currency: Currency? = .cad // change here and it still works
+var currency: Currency? = .mxn // change here and it still works
 
    func convert(dollars: Double) -> Double {
     if currency == .cad {
@@ -54,7 +54,7 @@ func convert2(amountString: String) -> String? {
     guard let unwrappedAmount = amount else {
         return amountString
     }
-    print(convert(dollars: unwrappedAmount))
+    convert(dollars: unwrappedAmount)
   return String(unwrappedAmount)
 }
 

@@ -1,0 +1,44 @@
+
+var dollars: Double = 0
+let usToCad = dollars * 1.4
+let usToMxn = dollars * 23.92
+
+
+enum Currency {
+    case cad
+    case mxn
+}
+
+
+var currency: Currency = .cad
+
+
+func convert(_ dollars: Double) -> Double {
+    switch currency {
+    case .cad:
+        return dollars * 1.4
+    case .mxn:
+        return dollars * 23.92
+    }
+}
+
+convert(250.00)
+
+func convert2(amountString: String) -> String? {
+    let amount = amountString
+    let amountConversion = Double(amount)
+    
+    guard let unwrappedAmount = amountConversion else {
+        return "Error"
+    }
+    print(convert(unwrappedAmount))
+    return("Total Converted Currency: \(convert(unwrappedAmount))")
+    }
+    
+convert2(amountString: "400.00")
+convert2(amountString: "2000.00")
+
+currency = .mxn
+
+convert2(amountString: "400.00")
+convert2(amountString: "2000.00")

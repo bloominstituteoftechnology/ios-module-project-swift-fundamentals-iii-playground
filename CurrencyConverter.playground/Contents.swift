@@ -1,12 +1,9 @@
 import UIKit
 
-
-
 enum Currency {
     case CAD
     case MXN
 }
-
 
 let usToCad = 1.40
 let usToMxn = 23.90
@@ -14,8 +11,7 @@ let usToMxn = 23.90
 
 var currency: Currency = .CAD
 
-
-func convertCurrency (_ dollars: Double) -> Double {
+func convert(_ dollars: Double) -> Double {
     var convertedAmount: Double = 0
     
     if currency == .CAD {
@@ -26,16 +22,16 @@ func convertCurrency (_ dollars: Double) -> Double {
     return convertedAmount
 }
 
-
-
-func convert(amountString: String) -> String? {
+func convert2(amountString: String) -> String? {
     let amount = Double(amountString)
     guard let unwrappedAmount = amount else {
-        print("Invalid Amount")
-     return nil
+     return "Invalid Input"
     }
-    convertCurrency(unwrappedAmount)
-    return 
+    return ("Converted currency: \(convert(unwrappedAmount))")
 }
 
-convert(amountString: "10")
+convert2(amountString: "12")
+
+currency = .MXN
+
+convert2(amountString: "15")

@@ -11,6 +11,11 @@ let usToMxn: Double = 19.70
 var currency: Currency = .cad
 
 func convert(_ dollars: Double) -> Double {
-    
-    return dollars
+    if currency == .cad {
+        let value = dollars * usToCad
+        return value
+    } else {
+        let value = dollars * usToMxn
+        return value
+    }
 }

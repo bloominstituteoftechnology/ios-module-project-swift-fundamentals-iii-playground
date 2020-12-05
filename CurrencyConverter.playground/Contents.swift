@@ -8,16 +8,28 @@ enum Currency {
 let usToCad: Double = 1.33
 let usToMxn: Double = 19.70
 
-var currency: Currency = .cad
+var currency: Currency = .mxn
 
-func convert(_ dollars: Double) -> Double {
+func conversion(_ dollars: Double) -> Double {
     if currency == .cad {
-        let dollars = usToCad * 1
-        return dollars
+        let convertedCad = usToCad * dollars
+        return convertedCad
         
     } else if currency == .mxn {
-        let dollars = usToMxn * 1
-        return dollars
+        let convertedMxn = usToMxn * dollars
+        return convertedMxn
     }
     return dollars
 }
+
+conversion(20)
+
+func convert(_ amountString: String) -> String? {
+    guard let amount = Double(amountString) else {
+        return amountString
+    }
+    conversion(amount)
+    return String(amount)
+}
+
+convert("20")

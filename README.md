@@ -15,7 +15,7 @@ On August 7th, 2019 they were:
 
 Create a new playground in this repository called "CurrencyConverter"
 
-1. Create a currency type enum below the `import` statements.
+1. Create a currency tyepe enum below the `import` statements.
 
 	```swift
 	enum Currency {
@@ -55,5 +55,3 @@ Create a new playground in this repository called "CurrencyConverter"
 	```
 
 2. Use the `string(from:)` method to convert from a number to a String for display
-
-

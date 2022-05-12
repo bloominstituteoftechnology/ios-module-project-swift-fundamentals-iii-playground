@@ -29,7 +29,29 @@ func convert(_ dollars: Double) -> Double {
 func convert(amountString: String) -> String? {
     guard let amount = Double(amountString) else { return "Amount string could not be converted" }
     let conversionResult = convert(amount)
-    let resultString = String(conversionResult)
+    var resultString = ""
+    
+    switch currency {
+    case .cad:
+        currencyFormatter.currencyCode = "CAD"
+        currencyFormatter.currencySymbol = "C$"
+        currencyFormatter.currencyDecimalSeparator = "."
+        currencyFormatter.currencyGroupingSeparator = ","
+        currencyFormatter.internationalCurrencySymbol = "C$"
+    case .mxn:
+        currencyFormatter.currencyCode = "MXN"
+        currencyFormatter.currencySymbol = "MX$"
+        currencyFormatter.currencyDecimalSeparator = "."
+        currencyFormatter.currencyGroupingSeparator = ","
+        currencyFormatter.internationalCurrencySymbol = "MX$"
+    }
+    
+    if let unwrappedString = currencyFormatter.string(from: conversionResult as NSNumber) {
+        resultString = unwrappedString
+    } else {
+        resultString = "Number formatting failed."
+    }
+    
     return resultString
 }
 
@@ -45,6 +67,6 @@ if let successfulConversion = convert(amountString: "100") {
     print(successfulConversion)
 }
 
-if let successfulFormatting = currencyFormatter.string(from: convert(100) as NSNumber) {
-    print(successfulFormatting)
-}
+
+
+
